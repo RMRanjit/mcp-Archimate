@@ -1,0 +1,1 @@
+  <element xsi:type="archimate:{{ELEMENT_TYPE}}" name="{{ELEMENT_NAME}}" id="{{ELEMENT_ID}}" documentation="{{ELEMENT_DOCUMENTATION}}"/>

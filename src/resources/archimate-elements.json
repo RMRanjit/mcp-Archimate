@@ -1,0 +1,344 @@
+{
+  "title": "ArchiMate 3.2 Element Reference",
+  "description": "Complete reference of all ArchiMate 3.2 elements organized by layer",
+  "layers": {
+    "Motivation": {
+      "description": "Elements that represent the context or change drivers for the enterprise",
+      "elements": {
+        "Stakeholder": {
+          "description": "An individual, team, or organization that has interests in, or concerns relative to, the outcome of the architecture",
+          "usage": "Use to represent people or organizations who influence or are influenced by the architecture",
+          "examples": ["Customer", "Employee", "Shareholder", "Regulator"]
+        },
+        "Driver": {
+          "description": "An external or internal condition that motivates an organization to define its goals and implement the changes necessary to achieve them",
+          "usage": "Use to represent forces that create motivation for change",
+          "examples": ["Market demand", "Regulatory requirement", "Cost pressure", "Technology advancement"]
+        },
+        "Assessment": {
+          "description": "The outcome of an analysis of the state of affairs of the enterprise with respect to some driver",
+          "usage": "Use to represent evaluation results or analysis outcomes",
+          "examples": ["Risk assessment", "Performance evaluation", "Compliance audit"]
+        },
+        "Goal": {
+          "description": "A high-level statement of intent, direction, or desired end state for an organization and its stakeholders",
+          "usage": "Use to represent what the organization wants to achieve",
+          "examples": ["Increase customer satisfaction", "Reduce operational costs", "Improve security"]
+        },
+        "Outcome": {
+          "description": "An end result that has been or will be achieved",
+          "usage": "Use to represent specific measurable results",
+          "examples": ["20% cost reduction", "99.9% uptime", "Customer satisfaction rating of 4.5"]
+        },
+        "Principle": {
+          "description": "A normative property of all systems in a given context, or the way in which they are realized",
+          "usage": "Use to represent fundamental rules or guidelines",
+          "examples": ["Data privacy", "Single source of truth", "API-first approach"]
+        },
+        "Requirement": {
+          "description": "A statement of need defining what a particular product or service should do or how it should perform",
+          "usage": "Use to represent specific needs that must be fulfilled",
+          "examples": ["System must respond within 2 seconds", "Data must be encrypted at rest"]
+        },
+        "Constraint": {
+          "description": "A factor that prevents or obstructs the realization of goals",
+          "usage": "Use to represent limitations or restrictions",
+          "examples": ["Budget limit", "Technology constraint", "Regulatory restriction"]
+        },
+        "Meaning": {
+          "description": "The knowledge or expertise present in, or the interpretation given to, a concept in a particular context",
+          "usage": "Use to represent semantic content or interpretation",
+          "examples": ["Business rule definition", "Data meaning", "Process semantics"]
+        },
+        "Value": {
+          "description": "The relative worth, utility, or importance of a concept",
+          "usage": "Use to represent what is valuable to stakeholders",
+          "examples": ["Cost savings", "Revenue increase", "Risk reduction"]
+        }
+      }
+    },
+    "Strategy": {
+      "description": "Elements that represent the strategic direction and choices of the enterprise",
+      "elements": {
+        "Resource": {
+          "description": "An asset owned or controlled by an individual or organization",
+          "usage": "Use to represent strategic assets and capabilities",
+          "examples": ["Brand", "Intellectual property", "Financial capital", "Human resources"]
+        },
+        "Capability": {
+          "description": "An ability that an active structure element possesses",
+          "usage": "Use to represent what the organization can do",
+          "examples": ["Digital marketing", "Risk management", "Customer service", "Innovation"]
+        },
+        "CourseOfAction": {
+          "description": "An approach or plan for configuring some capabilities and resources of the enterprise",
+          "usage": "Use to represent strategic approaches or initiatives",
+          "examples": ["Digital transformation", "Market expansion", "Cost optimization"]
+        },
+        "ValueStream": {
+          "description": "A sequence of activities that create an overall result for a customer, stakeholder, or end user",
+          "usage": "Use to represent end-to-end value delivery processes",
+          "examples": ["Order-to-cash", "Hire-to-retire", "Idea-to-market"]
+        }
+      }
+    },
+    "Business": {
+      "description": "Elements that represent business processes, functions, events, and actors",
+      "elements": {
+        "BusinessActor": {
+          "description": "A person, organizational unit, or external party that plays a role in business processes",
+          "usage": "Use to represent who performs business activities",
+          "examples": ["Customer", "Sales representative", "Manager", "External partner"]
+        },
+        "BusinessRole": {
+          "description": "The responsibility for performing specific behavior, to which an actor can be assigned",
+          "usage": "Use to represent roles that actors can play",
+          "examples": ["Account manager", "Analyst", "Approver", "Coordinator"]
+        },
+        "BusinessCollaboration": {
+          "description": "An aggregate of two or more business internal active structure elements that work together",
+          "usage": "Use to represent groups working together",
+          "examples": ["Project team", "Committee", "Partnership"]
+        },
+        "BusinessInterface": {
+          "description": "A point of access where business services are made available to the environment",
+          "usage": "Use to represent how business services are accessed",
+          "examples": ["Customer portal", "Service desk", "API endpoint"]
+        },
+        "BusinessProcess": {
+          "description": "A sequence of business behaviors that achieves a specific outcome",
+          "usage": "Use to represent end-to-end business workflows",
+          "examples": ["Order processing", "Customer onboarding", "Invoice management"]
+        },
+        "BusinessFunction": {
+          "description": "A collection of business behavior based on chosen set of criteria",
+          "usage": "Use to represent business capabilities or departments",
+          "examples": ["Sales", "Marketing", "Finance", "Human Resources"]
+        },
+        "BusinessInteraction": {
+          "description": "A unit of collective business behavior performed by two or more business actors",
+          "usage": "Use to represent collaborative business activities",
+          "examples": ["Negotiation", "Meeting", "Handover"]
+        },
+        "BusinessEvent": {
+          "description": "A business behavior element that denotes an organizational state change",
+          "usage": "Use to represent significant business occurrences",
+          "examples": ["Customer registration", "Order placed", "Contract signed"]
+        },
+        "BusinessService": {
+          "description": "An explicitly defined exposed business behavior",
+          "usage": "Use to represent services provided to customers or other parts of the organization",
+          "examples": ["Customer support", "Payment processing", "Reporting service"]
+        },
+        "BusinessObject": {
+          "description": "A concept used within a particular business domain",
+          "usage": "Use to represent business information or concepts",
+          "examples": ["Customer", "Order", "Invoice", "Contract"]
+        },
+        "Contract": {
+          "description": "A formal or informal specification of agreement between a provider and consumer",
+          "usage": "Use to represent agreements and SLAs",
+          "examples": ["Service level agreement", "Partnership agreement", "Employment contract"]
+        },
+        "Representation": {
+          "description": "A perceptible form of the information carried by a business object",
+          "usage": "Use to represent how business objects are represented",
+          "examples": ["Report", "Document", "Form", "Screen"]
+        },
+        "Product": {
+          "description": "A coherent collection of services and/or passive structure elements",
+          "usage": "Use to represent what the organization offers to customers",
+          "examples": ["Insurance policy", "Banking service", "Software license"]
+        }
+      }
+    },
+    "Application": {
+      "description": "Elements that represent application components, services, and interfaces",
+      "elements": {
+        "ApplicationComponent": {
+          "description": "An encapsulation of application functionality aligned to implementation structure",
+          "usage": "Use to represent software applications or major modules",
+          "examples": ["CRM system", "ERP system", "Mobile app", "Web portal"]
+        },
+        "ApplicationCollaboration": {
+          "description": "An aggregate of two or more application components that work together",
+          "usage": "Use to represent applications working together",
+          "examples": ["Integrated suite", "Microservices cluster", "Application ecosystem"]
+        },
+        "ApplicationInterface": {
+          "description": "A point of access where application services are made available",
+          "usage": "Use to represent how applications expose their functionality",
+          "examples": ["REST API", "Web service", "User interface", "File interface"]
+        },
+        "ApplicationFunction": {
+          "description": "Automated behavior that can be performed by an application component",
+          "usage": "Use to represent what applications can do",
+          "examples": ["Data validation", "Report generation", "Authentication", "Calculation"]
+        },
+        "ApplicationInteraction": {
+          "description": "A unit of collective application behavior performed by two or more application components",
+          "usage": "Use to represent applications working together",
+          "examples": ["Data synchronization", "Service orchestration", "Event handling"]
+        },
+        "ApplicationProcess": {
+          "description": "A sequence of application behaviors that achieves a specific outcome",
+          "usage": "Use to represent automated workflows",
+          "examples": ["Batch processing", "Automated approval", "Data pipeline"]
+        },
+        "ApplicationEvent": {
+          "description": "An application behavior element that denotes an application state change",
+          "usage": "Use to represent significant application events",
+          "examples": ["File uploaded", "Transaction completed", "Error occurred"]
+        },
+        "ApplicationService": {
+          "description": "An explicitly defined exposed application behavior",
+          "usage": "Use to represent services provided by applications",
+          "examples": ["Authentication service", "Payment service", "Notification service"]
+        },
+        "DataObject": {
+          "description": "Data structured for automated processing",
+          "usage": "Use to represent application data structures",
+          "examples": ["Database table", "File", "Message", "Configuration"]
+        }
+      }
+    },
+    "Technology": {
+      "description": "Elements that represent technology infrastructure and platforms",
+      "elements": {
+        "Node": {
+          "description": "A computational or physical resource that hosts, manipulates, or interacts with other computational or physical resources",
+          "usage": "Use to represent servers, devices, or computational resources",
+          "examples": ["Application server", "Database server", "Load balancer", "Mobile device"]
+        },
+        "Device": {
+          "description": "A physical IT resource upon which system software and artifacts may be stored or deployed",
+          "usage": "Use to represent physical computing hardware",
+          "examples": ["Server", "Laptop", "Tablet", "IoT sensor", "Network switch"]
+        },
+        "SystemSoftware": {
+          "description": "Software that provides or contributes to an environment for storing, executing, and using software or data",
+          "usage": "Use to represent platform software",
+          "examples": ["Operating system", "Database engine", "Web server", "Middleware"]
+        },
+        "TechnologyCollaboration": {
+          "description": "An aggregate of two or more nodes that work together",
+          "usage": "Use to represent technology components working together",
+          "examples": ["Server cluster", "Network", "Cloud platform"]
+        },
+        "TechnologyInterface": {
+          "description": "A point of access where technology services are made available",
+          "usage": "Use to represent technology access points",
+          "examples": ["Network protocol", "API", "Database connection", "File system"]
+        },
+        "Path": {
+          "description": "A link between two or more nodes, through which these nodes can exchange data or material",
+          "usage": "Use to represent communication paths",
+          "examples": ["Network connection", "Data flow", "Communication channel"]
+        },
+        "CommunicationNetwork": {
+          "description": "A set of structures that connects computer systems or other electronic devices",
+          "usage": "Use to represent networks that enable communication",
+          "examples": ["LAN", "WAN", "Internet", "VPN"]
+        },
+        "TechnologyFunction": {
+          "description": "A collection of technology behavior based on a chosen set of criteria",
+          "usage": "Use to represent technology capabilities",
+          "examples": ["Data storage", "Processing", "Communication", "Security"]
+        },
+        "TechnologyProcess": {
+          "description": "A sequence of technology behaviors that achieves a specific outcome",
+          "usage": "Use to represent automated technology processes",
+          "examples": ["Backup process", "Monitoring", "Deployment pipeline"]
+        },
+        "TechnologyInteraction": {
+          "description": "A unit of collective technology behavior performed by two or more nodes",
+          "usage": "Use to represent technology components interacting",
+          "examples": ["Data replication", "Load balancing", "Failover"]
+        },
+        "TechnologyEvent": {
+          "description": "A technology behavior element that denotes a technology state change",
+          "usage": "Use to represent technology events",
+          "examples": ["System startup", "Network failure", "Threshold exceeded"]
+        },
+        "TechnologyService": {
+          "description": "An explicitly defined exposed technology behavior",
+          "usage": "Use to represent services provided by technology",
+          "examples": ["Database service", "Messaging service", "Security service"]
+        },
+        "Artifact": {
+          "description": "A piece of data that is used or produced in a software development process",
+          "usage": "Use to represent deployable software items",
+          "examples": ["Application binary", "Configuration file", "Library", "Container image"]
+        }
+      }
+    },
+    "Physical": {
+      "description": "Elements that represent physical elements like equipment and facilities",
+      "elements": {
+        "Equipment": {
+          "description": "One or more physical machines, tools, or instruments that can create, use, store, move, or transform materials",
+          "usage": "Use to represent physical machinery or tools",
+          "examples": ["Manufacturing equipment", "HVAC system", "Security camera", "Printer"]
+        },
+        "Facility": {
+          "description": "A physical structure or environment",
+          "usage": "Use to represent buildings or physical spaces",
+          "examples": ["Office building", "Data center", "Warehouse", "Factory"]
+        },
+        "DistributionNetwork": {
+          "description": "A physical network used to transport materials or energy",
+          "usage": "Use to represent physical distribution systems",
+          "examples": ["Power grid", "Water supply", "Transportation network", "Supply chain"]
+        },
+        "Material": {
+          "description": "Tangible physical matter or energy",
+          "usage": "Use to represent physical materials or energy",
+          "examples": ["Raw materials", "Products", "Energy", "Fuel"]
+        },
+        "Location": {
+          "description": "A conceptual point or extent in space",
+          "usage": "Use to represent geographical locations",
+          "examples": ["City", "Region", "Site", "Address"]
+        }
+      }
+    },
+    "Implementation": {
+      "description": "Elements that represent implementation and migration planning",
+      "elements": {
+        "WorkPackage": {
+          "description": "A series of actions identified and designed to achieve specific results within specified time and resource constraints",
+          "usage": "Use to represent project work packages or phases",
+          "examples": ["Development phase", "Testing phase", "Deployment", "Training"]
+        },
+        "Deliverable": {
+          "description": "A precisely-defined outcome of a work package",
+          "usage": "Use to represent project deliverables",
+          "examples": ["Software release", "Documentation", "Training materials", "Test results"]
+        },
+        "ImplementationEvent": {
+          "description": "A state change related to implementation or migration",
+          "usage": "Use to represent implementation milestones or events",
+          "examples": ["Go-live", "System cutover", "Milestone achieved", "Phase completion"]
+        },
+        "Plateau": {
+          "description": "A relatively stable state of the architecture that exists during a limited period of time",
+          "usage": "Use to represent architecture states during migration",
+          "examples": ["Current state", "Interim state", "Target state"]
+        },
+        "Gap": {
+          "description": "A statement of difference between two plateaus",
+          "usage": "Use to represent differences between architecture states",
+          "examples": ["Capability gap", "Technology gap", "Process gap"]
+        }
+      }
+    }
+  },
+  "usage_tips": [
+    "Start with business layer elements to model business processes and actors",
+    "Use application layer to represent supporting software systems",
+    "Add technology layer to show underlying infrastructure",
+    "Connect layers with serving and realization relationships",
+    "Use motivation layer to capture drivers and requirements",
+    "Group related elements to reduce diagram complexity"
+  ]
+}

@@ -1,0 +1,1 @@
+      <child xsi:type="archimate:DiagramModelArchimateConnection" id="{{CONNECTION_ID}}" source="{{SOURCE_VISUAL_ID}}" target="{{TARGET_VISUAL_ID}}" archimateRelationship="{{RELATIONSHIP_ID}}"/>

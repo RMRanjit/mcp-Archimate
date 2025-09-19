@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "archimate": {
+      "command": "node",
+      "args": ["/Users/nullpointer/Code/MCP/MCP-Archimate/dist/index.js"],
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}

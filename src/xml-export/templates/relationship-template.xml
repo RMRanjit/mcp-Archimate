@@ -1,0 +1,1 @@
+  <element xsi:type="archimate:{{RELATIONSHIP_TYPE}}Relationship" name="{{RELATIONSHIP_NAME}}" id="{{RELATIONSHIP_ID}}" source="{{SOURCE_ID}}" target="{{TARGET_ID}}"/>

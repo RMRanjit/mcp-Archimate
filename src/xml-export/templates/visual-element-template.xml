@@ -1,0 +1,4 @@
+      <child xsi:type="archimate:DiagramModelArchimateObject" id="{{VISUAL_ID}}" archimateElement="{{ELEMENT_ID}}">
+        <bounds x="{{X_POSITION}}" y="{{Y_POSITION}}" width="{{WIDTH}}" height="{{HEIGHT}}"/>
+        <fillColor r="{{COLOR_R}}" g="{{COLOR_G}}" b="{{COLOR_B}}"/>
+      </child>

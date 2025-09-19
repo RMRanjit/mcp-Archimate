@@ -1,0 +1,231 @@
+{
+  "title": "ArchiMate 3.2 Relationship Reference",
+  "description": "Complete reference of ArchiMate relationships, their meanings, and usage rules",
+  "categories": {
+    "Structural": {
+      "description": "Relationships that model the static construction or composition of concepts",
+      "relationships": {
+        "Composition": {
+          "symbol": "◆—",
+          "description": "A relationship that indicates that an element consists of one or more other concepts",
+          "usage": "Models that one element is composed of other elements (strong ownership)",
+          "rules": "The composed element cannot exist without the composing element",
+          "examples": [
+            "Business Process composes Business Functions",
+            "Application Component composes Application Services",
+            "Node composes System Software"
+          ],
+          "common_patterns": [
+            "Process decomposition into sub-processes",
+            "System decomposition into modules",
+            "Organization decomposition into departments"
+          ]
+        },
+        "Aggregation": {
+          "symbol": "◇—",
+          "description": "A relationship that indicates that an element groups a number of other concepts",
+          "usage": "Models that one element aggregates other elements (weak ownership)",
+          "rules": "The aggregated elements can exist independently",
+          "examples": [
+            "Business Collaboration aggregates Business Actors",
+            "Application Collaboration aggregates Application Components",
+            "Technology Collaboration aggregates Nodes"
+          ],
+          "common_patterns": [
+            "Grouping actors into teams",
+            "Clustering applications into suites",
+            "Grouping infrastructure into platforms"
+          ]
+        },
+        "Assignment": {
+          "symbol": "◯—",
+          "description": "A relationship that models the allocation of responsibility, performance of behavior, or execution",
+          "usage": "Shows that an active element is assigned to a passive element or behavior element",
+          "rules": "Links active structure elements to behavior or passive structure elements",
+          "examples": [
+            "Business Actor assigned to Business Process",
+            "Application Component assigned to Application Function",
+            "Node assigned to Artifact"
+          ],
+          "common_patterns": [
+            "Who performs what process",
+            "Which system provides which service",
+            "What runs on which infrastructure"
+          ]
+        },
+        "Realization": {
+          "symbol": "—|>",
+          "description": "A relationship that links a logical element with a more concrete element that realizes it",
+          "usage": "Shows how something abstract is made concrete",
+          "rules": "Links elements across different abstraction levels",
+          "examples": [
+            "Application Service realizes Business Service",
+            "Technology Service realizes Application Service",
+            "Business Process realizes Business Function"
+          ],
+          "common_patterns": [
+            "How business services are implemented by applications",
+            "How application services are supported by technology",
+            "How abstract concepts become concrete implementations"
+          ]
+        }
+      }
+    },
+    "Dependency": {
+      "description": "Relationships that model dependencies between concepts",
+      "relationships": {
+        "Serving": {
+          "symbol": "—>",
+          "description": "A relationship that models that an element provides its functionality to another element",
+          "usage": "Shows that one element serves another by providing services or functionality",
+          "rules": "The serving element provides functionality used by the served element",
+          "examples": [
+            "Application Service serves Business Process",
+            "Technology Service serves Application Component",
+            "Business Service serves Business Actor"
+          ],
+          "common_patterns": [
+            "Service dependencies between layers",
+            "Support relationships",
+            "Provider-consumer relationships"
+          ]
+        },
+        "Access": {
+          "symbol": "—> (with r/w/rw)",
+          "description": "A relationship that models the ability of behavior and active structure elements to observe or act upon passive structure elements",
+          "usage": "Shows how behavior or active elements access data or passive elements",
+          "rules": "Can specify access type: read (r), write (w), read-write (rw), or access",
+          "examples": [
+            "Business Process accesses Business Object",
+            "Application Function accesses Data Object",
+            "Technology Process accesses Artifact"
+          ],
+          "common_patterns": [
+            "Data access patterns",
+            "Information flow",
+            "Resource usage"
+          ]
+        },
+        "Influence": {
+          "symbol": "—> (dashed)",
+          "description": "A relationship that models that an element affects the implementation or achievement of some motivation element",
+          "usage": "Shows how elements positively or negatively influence goals, principles, or requirements",
+          "rules": "Can specify strength and sign (positive/negative)",
+          "examples": [
+            "Driver influences Goal",
+            "Principle influences Requirement",
+            "Assessment influences Outcome"
+          ],
+          "common_patterns": [
+            "Requirements traceability",
+            "Goal decomposition",
+            "Impact analysis"
+          ]
+        }
+      }
+    },
+    "Dynamic": {
+      "description": "Relationships that model behavioral dependencies",
+      "relationships": {
+        "Triggering": {
+          "symbol": "—>",
+          "description": "A temporal or causal relationship between elements",
+          "usage": "Shows that one element triggers or initiates another element",
+          "rules": "Links behavior elements to show sequence or causality",
+          "examples": [
+            "Business Event triggers Business Process",
+            "Application Event triggers Application Process",
+            "Technology Event triggers Technology Process"
+          ],
+          "common_patterns": [
+            "Event-driven architectures",
+            "Process sequences",
+            "Workflow patterns"
+          ]
+        },
+        "Flow": {
+          "symbol": "—> (thick)",
+          "description": "A relationship that represents transfer from one element to another",
+          "usage": "Shows flow of information, materials, or energy between elements",
+          "rules": "Can represent information flow, material flow, or energy flow",
+          "examples": [
+            "Business Process flows to Business Process (information)",
+            "Equipment flows to Equipment (material)",
+            "Node flows to Node (data)"
+          ],
+          "common_patterns": [
+            "Information flow diagrams",
+            "Process chains",
+            "Supply chains",
+            "Data flows"
+          ]
+        }
+      }
+    },
+    "Other": {
+      "description": "Other important relationships",
+      "relationships": {
+        "Specialization": {
+          "symbol": "—|>",
+          "description": "A relationship between a general element and a more specific element",
+          "usage": "Shows that one element is a specialized version of another",
+          "rules": "The specialized element inherits properties of the general element",
+          "examples": [
+            "Specific Business Actor specializes general Business Actor",
+            "Specific Application Component specializes general type",
+            "Specific Technology Service specializes general service"
+          ],
+          "common_patterns": [
+            "Type hierarchies",
+            "Classification systems",
+            "Inheritance structures"
+          ]
+        },
+        "Association": {
+          "symbol": "—",
+          "description": "A relationship that models an unspecified relationship, or one that is not represented by another ArchiMate relationship",
+          "usage": "Use when no other relationship type is appropriate",
+          "rules": "Generic relationship without specific semantics",
+          "examples": [
+            "Business Actor associates with Business Object",
+            "General relationships between any elements"
+          ],
+          "common_patterns": [
+            "Informal relationships",
+            "Placeholder relationships",
+            "General associations"
+          ]
+        }
+      }
+    }
+  },
+  "relationship_matrix": {
+    "description": "Valid relationships between element types (simplified overview)",
+    "common_valid_patterns": [
+      "Active structure elements can be assigned to behavior elements",
+      "Behavior elements can access passive structure elements",
+      "Elements from lower layers typically serve elements from higher layers",
+      "Elements can be composed of or aggregate other elements of the same type",
+      "Abstract elements can be realized by more concrete elements"
+    ]
+  },
+  "best_practices": [
+    "Use composition for part-whole relationships with strong ownership",
+    "Use aggregation for grouping without ownership",
+    "Use serving to show service dependencies between layers",
+    "Use realization to show how abstract concepts are implemented",
+    "Use access to show data usage patterns",
+    "Keep relationship directions consistent (typically upward serving)",
+    "Avoid circular dependencies in serving relationships",
+    "Use specialization sparingly for clear type hierarchies",
+    "Prefer specific relationships over generic association"
+  ],
+  "common_anti_patterns": [
+    "Business actors directly accessing technology elements",
+    "Circular serving relationships",
+    "Too many association relationships (be more specific)",
+    "Mixing abstraction levels inappropriately",
+    "Overusing composition (consider aggregation)",
+    "Missing realization relationships between layers"
+  ]
+}

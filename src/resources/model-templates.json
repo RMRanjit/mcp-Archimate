@@ -1,0 +1,410 @@
+{
+  "title": "ArchiMate Model Templates and Examples",
+  "description": "Collection of common ArchiMate model patterns and complete examples",
+  "templates": {
+    "basic_business_model": {
+      "name": "Basic Business Model",
+      "description": "Simple business layer model with actors, processes, and services",
+      "use_case": "Starting point for business architecture modeling",
+      "elements": [
+        {
+          "id": "customer",
+          "name": "Customer",
+          "type": "BusinessActor",
+          "documentation": "External customer who uses our services"
+        },
+        {
+          "id": "sales_rep",
+          "name": "Sales Representative",
+          "type": "BusinessActor",
+          "documentation": "Internal sales staff who manages customer relationships"
+        },
+        {
+          "id": "order_process",
+          "name": "Order Processing",
+          "type": "BusinessProcess",
+          "documentation": "End-to-end process for handling customer orders"
+        },
+        {
+          "id": "customer_service",
+          "name": "Customer Service",
+          "type": "BusinessService",
+          "documentation": "Service provided to customers for support and orders"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "rel1",
+          "source": "customer_service",
+          "target": "customer",
+          "type": "Serving"
+        },
+        {
+          "id": "rel2",
+          "source": "sales_rep",
+          "target": "order_process",
+          "type": "Assignment"
+        },
+        {
+          "id": "rel3",
+          "source": "order_process",
+          "target": "customer_service",
+          "type": "Realization"
+        }
+      ]
+    },
+    "layered_architecture": {
+      "name": "Three-Layer Architecture",
+      "description": "Business, application, and technology layers with serving relationships",
+      "use_case": "Comprehensive enterprise architecture view",
+      "elements": [
+        {
+          "id": "customer",
+          "name": "Customer",
+          "type": "BusinessActor"
+        },
+        {
+          "id": "online_ordering",
+          "name": "Online Ordering",
+          "type": "BusinessProcess"
+        },
+        {
+          "id": "order_service",
+          "name": "Order Service",
+          "type": "BusinessService"
+        },
+        {
+          "id": "ecommerce_app",
+          "name": "E-commerce Application",
+          "type": "ApplicationComponent"
+        },
+        {
+          "id": "order_api",
+          "name": "Order API",
+          "type": "ApplicationService"
+        },
+        {
+          "id": "web_server",
+          "name": "Web Server",
+          "type": "Node"
+        },
+        {
+          "id": "http_service",
+          "name": "HTTP Service",
+          "type": "TechnologyService"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "rel1",
+          "source": "order_service",
+          "target": "customer",
+          "type": "Serving"
+        },
+        {
+          "id": "rel2",
+          "source": "customer",
+          "target": "online_ordering",
+          "type": "Assignment"
+        },
+        {
+          "id": "rel3",
+          "source": "online_ordering",
+          "target": "order_service",
+          "type": "Realization"
+        },
+        {
+          "id": "rel4",
+          "source": "order_api",
+          "target": "online_ordering",
+          "type": "Serving"
+        },
+        {
+          "id": "rel5",
+          "source": "ecommerce_app",
+          "target": "order_api",
+          "type": "Realization"
+        },
+        {
+          "id": "rel6",
+          "source": "http_service",
+          "target": "ecommerce_app",
+          "type": "Serving"
+        },
+        {
+          "id": "rel7",
+          "source": "web_server",
+          "target": "http_service",
+          "type": "Realization"
+        }
+      ]
+    },
+    "application_integration": {
+      "name": "Application Integration Pattern",
+      "description": "Multiple applications integrating through services and interfaces",
+      "use_case": "Modeling application landscape and integration points",
+      "elements": [
+        {
+          "id": "crm_system",
+          "name": "CRM System",
+          "type": "ApplicationComponent"
+        },
+        {
+          "id": "erp_system",
+          "name": "ERP System",
+          "type": "ApplicationComponent"
+        },
+        {
+          "id": "integration_platform",
+          "name": "Integration Platform",
+          "type": "ApplicationComponent"
+        },
+        {
+          "id": "customer_api",
+          "name": "Customer API",
+          "type": "ApplicationInterface"
+        },
+        {
+          "id": "order_api",
+          "name": "Order API",
+          "type": "ApplicationInterface"
+        },
+        {
+          "id": "sync_service",
+          "name": "Data Synchronization",
+          "type": "ApplicationService"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "rel1",
+          "source": "crm_system",
+          "target": "customer_api",
+          "type": "Composition"
+        },
+        {
+          "id": "rel2",
+          "source": "erp_system",
+          "target": "order_api",
+          "type": "Composition"
+        },
+        {
+          "id": "rel3",
+          "source": "integration_platform",
+          "target": "sync_service",
+          "type": "Realization"
+        },
+        {
+          "id": "rel4",
+          "source": "sync_service",
+          "target": "customer_api",
+          "type": "Access"
+        },
+        {
+          "id": "rel5",
+          "source": "sync_service",
+          "target": "order_api",
+          "type": "Access"
+        }
+      ]
+    },
+    "microservices_pattern": {
+      "name": "Microservices Architecture",
+      "description": "Microservices pattern with API gateway and individual services",
+      "use_case": "Modern cloud-native application architecture",
+      "elements": [
+        {
+          "id": "api_gateway",
+          "name": "API Gateway",
+          "type": "ApplicationComponent"
+        },
+        {
+          "id": "user_service",
+          "name": "User Service",
+          "type": "ApplicationComponent"
+        },
+        {
+          "id": "order_service",
+          "name": "Order Service",
+          "type": "ApplicationComponent"
+        },
+        {
+          "id": "payment_service",
+          "name": "Payment Service",
+          "type": "ApplicationComponent"
+        },
+        {
+          "id": "user_api",
+          "name": "User API",
+          "type": "ApplicationInterface"
+        },
+        {
+          "id": "order_api",
+          "name": "Order API",
+          "type": "ApplicationInterface"
+        },
+        {
+          "id": "payment_api",
+          "name": "Payment API",
+          "type": "ApplicationInterface"
+        },
+        {
+          "id": "user_db",
+          "name": "User Database",
+          "type": "DataObject"
+        },
+        {
+          "id": "order_db",
+          "name": "Order Database",
+          "type": "DataObject"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "rel1",
+          "source": "user_service",
+          "target": "user_api",
+          "type": "Composition"
+        },
+        {
+          "id": "rel2",
+          "source": "order_service",
+          "target": "order_api",
+          "type": "Composition"
+        },
+        {
+          "id": "rel3",
+          "source": "payment_service",
+          "target": "payment_api",
+          "type": "Composition"
+        },
+        {
+          "id": "rel4",
+          "source": "api_gateway",
+          "target": "user_api",
+          "type": "Access"
+        },
+        {
+          "id": "rel5",
+          "source": "api_gateway",
+          "target": "order_api",
+          "type": "Access"
+        },
+        {
+          "id": "rel6",
+          "source": "api_gateway",
+          "target": "payment_api",
+          "type": "Access"
+        },
+        {
+          "id": "rel7",
+          "source": "user_service",
+          "target": "user_db",
+          "type": "Access"
+        },
+        {
+          "id": "rel8",
+          "source": "order_service",
+          "target": "order_db",
+          "type": "Access"
+        }
+      ]
+    }
+  },
+  "patterns": {
+    "layered_serving": {
+      "name": "Layered Serving Pattern",
+      "description": "Each layer serves the layer above it",
+      "structure": "Technology → Application → Business",
+      "relationships": ["Serving", "Realization"],
+      "usage": "Standard enterprise architecture layering"
+    },
+    "service_composition": {
+      "name": "Service Composition",
+      "description": "Complex services composed of simpler services",
+      "structure": "Composite Service ← (Composition) ← Component Services",
+      "relationships": ["Composition", "Realization"],
+      "usage": "Service-oriented architecture modeling"
+    },
+    "actor_assignment": {
+      "name": "Actor Assignment Pattern",
+      "description": "Actors assigned to processes they perform",
+      "structure": "Actor —(Assignment)→ Process",
+      "relationships": ["Assignment"],
+      "usage": "Responsibility modeling"
+    },
+    "data_access": {
+      "name": "Data Access Pattern",
+      "description": "Processes and functions accessing data objects",
+      "structure": "Process/Function —(Access)→ Data Object",
+      "relationships": ["Access"],
+      "usage": "Information architecture modeling"
+    }
+  },
+  "domain_examples": {
+    "banking": {
+      "common_elements": [
+        "Bank Customer (BusinessActor)",
+        "Account Management (BusinessProcess)",
+        "Banking Service (BusinessService)",
+        "Core Banking System (ApplicationComponent)",
+        "Account Data (DataObject)"
+      ],
+      "typical_relationships": [
+        "Banking Service serves Bank Customer",
+        "Core Banking System realizes Banking Service",
+        "Account Management accesses Account Data"
+      ]
+    },
+    "retail": {
+      "common_elements": [
+        "Customer (BusinessActor)",
+        "Sales Process (BusinessProcess)",
+        "E-commerce Platform (ApplicationComponent)",
+        "Product Catalog (DataObject)",
+        "Point of Sale (Device)"
+      ],
+      "typical_relationships": [
+        "E-commerce Platform serves Sales Process",
+        "Sales Process accesses Product Catalog",
+        "Point of Sale realizes Sales Process"
+      ]
+    },
+    "healthcare": {
+      "common_elements": [
+        "Patient (BusinessActor)",
+        "Treatment Process (BusinessProcess)",
+        "Electronic Health Record (ApplicationComponent)",
+        "Patient Data (DataObject)",
+        "Medical Device (Equipment)"
+      ],
+      "typical_relationships": [
+        "Treatment Process serves Patient",
+        "Electronic Health Record supports Treatment Process",
+        "Treatment Process accesses Patient Data"
+      ]
+    }
+  },
+  "usage_guidance": {
+    "getting_started": [
+      "Start with a simple business model template",
+      "Identify key actors and their main processes",
+      "Add supporting services and applications",
+      "Connect layers with serving relationships",
+      "Validate relationships using the relationship matrix"
+    ],
+    "choosing_templates": [
+      "Use basic_business_model for process modeling",
+      "Use layered_architecture for enterprise views",
+      "Use application_integration for IT architecture",
+      "Use microservices_pattern for cloud architecture"
+    ],
+    "customization_tips": [
+      "Rename elements to match your domain",
+      "Add domain-specific element types",
+      "Extend relationships based on your needs",
+      "Group related elements for clarity",
+      "Use views to show different perspectives"
+    ]
+  }
+}
