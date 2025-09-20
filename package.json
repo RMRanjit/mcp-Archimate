@@ -1,6 +1,6 @@
 {
   "name": "@null-pointer/mcp-archimate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Model Context Protocol (MCP) server for ArchiMate 3.2 enterprise architecture diagrams. Creates Mermaid and ArchiMate XML diagrams with validation against ArchiMate 3.2 specification.",
   "main": "dist/server.js",
   "bin": {

@@ -39,7 +39,7 @@ npm install @null-pointer/mcp-archimate
 Start the server directly:
 
 ```bash
-npx @null-pointer/mcp-archimate
+npx -y @null-pointer/mcp-archimate
 ```
 
 Or if installed globally:
@@ -64,7 +64,7 @@ mcp-archimate
      "mcpServers": {
        "archimate": {
          "command": "npx",
-         "args": ["@null-pointer/mcp-archimate"]
+         "args": ["-y", "@null-pointer/mcp-archimate"]
        }
      }
    }

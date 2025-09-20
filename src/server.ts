@@ -16,8 +16,7 @@ import { RelationshipType } from './models/archimate.js';
 import { MermaidGenerator } from './generator/mermaid_generator.js';
 import { Validator } from './validator/validator.js';
 import { ResourceManager } from './resources/resource-manager.js';
-import { XmlExporter, createXmlExporter } from './xml-export/xml-exporter.js';
-import { ModelXmlGenerator } from './xml-export/model-xml-generator.js';
+import { createXmlExporter } from './xml-export/xml-exporter.js';
 
 interface ArchiMateElement {
   id: string;
@@ -451,7 +450,7 @@ class ArchiMateServer {
 
     if (args.layer) {
       // Filter by layer - we'd need to implement layer mapping
-      elementList = allElementTypes.filter(type => {
+      elementList = allElementTypes.filter(_type => {
         // For now, just return all elements
         // TODO: Implement proper layer filtering
         return true;
@@ -666,11 +665,11 @@ Please validate the model and provide specific, actionable recommendations for i
     const templates = await this.resourceManager.getResourceContent('template://archimate/examples');
     const templatesData = JSON.parse(templates);
 
-    const availablePatterns = Object.entries(templatesData.templates).map(([key, template]: [string, any]) =>
+    const availablePatterns = Object.entries(templatesData.templates).map(([_key, template]: [string, any]) =>
       `- **${template.name}**: ${template.description} (Use case: ${template.use_case})`
     ).join('\n');
 
-    const commonPatterns = Object.entries(templatesData.patterns).map(([key, pattern]: [string, any]) =>
+    const commonPatterns = Object.entries(templatesData.patterns).map(([_key, pattern]: [string, any]) =>
       `- **${pattern.name}**: ${pattern.description} (Structure: ${pattern.structure})`
     ).join('\n');
 
@@ -885,10 +884,17 @@ Please analyze my requirements and suggest the most appropriate ArchiMate patter
   }
 }
 
-// Start the server if this file is run directly
-if (import.meta.url === `file://${process.argv[1]}`) {
+// Start the server - more robust detection for various execution contexts
+const isMainModule = import.meta.url === `file://${process.argv[1]}` ||
+                     process.argv[1]?.endsWith('server.js') ||
+                     process.argv[1]?.includes('mcp-archimate');
+
+if (isMainModule) {
   const server = new ArchiMateServer();
-  server.run().catch(console.error);
+  server.run().catch((error) => {
+    console.error('ArchiMate MCP Server Error:', error);
+    process.exit(1);
+  });
 }
 
 export { ArchiMateServer };
