@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+
+  <!-- ELEMENTS -->
+
+  <!-- BUSINESS LAYER ELEMENTS -->
+  <element xsi:type="archimate:BusinessActor" name="Customer" id="actor-001" documentation="BusinessActor &#39;Customer&#39; represents business processes, functions, events, and actors in the Business layer"/>
+  <element xsi:type="archimate:BusinessProcess" name="Order Processing" id="process-001" documentation="BusinessProcess &#39;Order Processing&#39; represents business processes, functions, events, and actors in the Business layer"/>
+
+  <!-- APPLICATION LAYER ELEMENTS -->
+  <element xsi:type="archimate:ApplicationComponent" name="CRM System" id="app-001" documentation="ApplicationComponent &#39;CRM System&#39; represents application components, services, and interfaces in the Application layer"/>
+  <element xsi:type="archimate:DataObject" name="Customer Data" id="data-001" documentation="DataObject &#39;Customer Data&#39; represents application components, services, and interfaces in the Application layer"/>
+
+</elements>

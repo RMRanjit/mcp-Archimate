@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<views>
+  <!-- FOLDER STRUCTURE FOR VIEWS -->
+  <folder name="Views" id="{{VIEWS_FOLDER_ID}}" type="diagrams">
+
+    <!-- Test View -->
+    <element xsi:type="archimate:ArchiMateDiagramModel" name="Test View" id="view-1758332473144">
+      <documentation>{{VIEW_DOCUMENTATION}}</documentation>
+
+      {{VIEW_VISUAL_ELEMENTS}}
+
+      {{VIEW_CONNECTIONS}}
+
+    </element>
+
+  </folder>
+</views>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<relationships>
+
+  <!-- RELATIONSHIPS -->
+
+  <!-- REALIZATION RELATIONSHIPS -->
+  <element xsi:type="archimate:RealizationRelationship" name="" id="rel-002" source="process-001" target="app-001"/>
+
+  <!-- ACCESS RELATIONSHIPS -->
+  <element xsi:type="archimate:AccessRelationship" name="" id="rel-003" source="app-001" target="data-001"/>
+
+  <!-- TRIGGERING RELATIONSHIPS -->
+  <element xsi:type="archimate:TriggeringRelationship" name="" id="rel-001" source="actor-001" target="process-001"/>
+
+</relationships>

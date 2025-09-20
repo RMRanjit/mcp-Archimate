@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model
+    xmlns="http://www.opengroup.org/xsd/archimate/3.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd"
+    identifier="model-1758332473140">
+  <name xml:lang="en">Enterprise Architecture Model</name>
+  <purpose>Complete multi-layer enterprise architecture model</purpose>
+
+  
+  <!-- ELEMENTS -->
+
+  <!-- MOTIVATION LAYER ELEMENTS -->
+  <element xsi:type="archimate:Stakeholder" name="Board of Directors" id="stakeholder-001" documentation="Stakeholder element: Board of Directors"/>
+  <element xsi:type="archimate:Goal" name="Increase Customer Satisfaction" id="goal-001" documentation="Goal element: Increase Customer Satisfaction"/>
+  <element xsi:type="archimate:Requirement" name="System Must Be Available 99.9%" id="req-001" documentation="Requirement element: System Must Be Available 99.9%"/>
+
+  <!-- STRATEGY LAYER ELEMENTS -->
+  <element xsi:type="archimate:Capability" name="Customer Management" id="cap-001" documentation="Capability element: Customer Management"/>
+  <element xsi:type="archimate:Resource" name="Customer Database" id="res-001" documentation="Resource element: Customer Database"/>
+
+  <!-- BUSINESS LAYER ELEMENTS -->
+  <element xsi:type="archimate:BusinessActor" name="Customer Service Rep" id="actor-001" documentation="BusinessActor element: Customer Service Rep"/>
+  <element xsi:type="archimate:BusinessProcess" name="Customer Support" id="process-001" documentation="BusinessProcess element: Customer Support"/>
+  <element xsi:type="archimate:BusinessService" name="Support Service" id="service-001" documentation="BusinessService element: Support Service"/>
+  <element xsi:type="archimate:BusinessObject" name="Support Ticket" id="object-001" documentation="BusinessObject element: Support Ticket"/>
+
+  <!-- APPLICATION LAYER ELEMENTS -->
+  <element xsi:type="archimate:ApplicationComponent" name="Ticketing System" id="app-001" documentation="ApplicationComponent element: Ticketing System"/>
+  <element xsi:type="archimate:ApplicationService" name="Ticket Management" id="app-service-001" documentation="ApplicationService element: Ticket Management"/>
+  <element xsi:type="archimate:DataObject" name="Ticket Data" id="data-001" documentation="DataObject element: Ticket Data"/>
+
+  <!-- TECHNOLOGY LAYER ELEMENTS -->
+  <element xsi:type="archimate:Node" name="Application Server" id="node-001" documentation="Node element: Application Server"/>
+  <element xsi:type="archimate:SystemSoftware" name="Database Server" id="sys-001" documentation="SystemSoftware element: Database Server"/>
+  <element xsi:type="archimate:Artifact" name="Ticket Database" id="artifact-001" documentation="Artifact element: Ticket Database"/>
+
+  <!-- PHYSICAL LAYER ELEMENTS -->
+  <element xsi:type="archimate:Equipment" name="Server Hardware" id="equip-001" documentation="Equipment element: Server Hardware"/>
+  <element xsi:type="archimate:Facility" name="Data Center" id="facility-001" documentation="Facility element: Data Center"/>
+
+  <!-- IMPLEMENTATION LAYER ELEMENTS -->
+  <element xsi:type="archimate:WorkPackage" name="System Implementation" id="wp-001" documentation="WorkPackage element: System Implementation"/>
+  <element xsi:type="archimate:Deliverable" name="Production System" id="deliv-001" documentation="Deliverable element: Production System"/>
+
+
+  
+  <!-- RELATIONSHIPS -->
+  <element xsi:type="archimate:AssociationRelationship" name="" id="rel-001" source="stakeholder-001" target="goal-001"/>
+  <element xsi:type="archimate:RealizationRelationship" name="" id="rel-002" source="goal-001" target="req-001"/>
+  <element xsi:type="archimate:RealizationRelationship" name="" id="rel-003" source="cap-001" target="process-001"/>
+  <element xsi:type="archimate:RealizationRelationship" name="" id="rel-004" source="process-001" target="service-001"/>
+  <element xsi:type="archimate:AssignmentRelationship" name="" id="rel-005" source="actor-001" target="process-001"/>
+  <element xsi:type="archimate:AccessRelationship" name="" id="rel-006" source="process-001" target="object-001"/>
+  <element xsi:type="archimate:ServingRelationship" name="" id="rel-007" source="app-service-001" target="service-001"/>
+  <element xsi:type="archimate:RealizationRelationship" name="" id="rel-008" source="app-001" target="app-service-001"/>
+  <element xsi:type="archimate:AccessRelationship" name="" id="rel-009" source="app-001" target="data-001"/>
+  <element xsi:type="archimate:AssignmentRelationship" name="" id="rel-010" source="node-001" target="app-001"/>
+  <element xsi:type="archimate:AssignmentRelationship" name="" id="rel-011" source="sys-001" target="artifact-001"/>
+  <element xsi:type="archimate:CompositionRelationship" name="" id="rel-012" source="node-001" target="sys-001"/>
+  <element xsi:type="archimate:AssignmentRelationship" name="" id="rel-013" source="equip-001" target="node-001"/>
+  <element xsi:type="archimate:CompositionRelationship" name="" id="rel-014" source="facility-001" target="equip-001"/>
+  <element xsi:type="archimate:RealizationRelationship" name="" id="rel-015" source="wp-001" target="deliv-001"/>
+
+
+    <!-- FOLDER STRUCTURE FOR VIEWS -->
+  <folder name="Views" id="folder-views-1758332473140" type="diagrams">
+
+    <!-- Generated View -->
+    <element xsi:type="archimate:ArchiMateDiagramModel" name="{{VIEW_NAME}}" id="view-1758332473140">
+      <documentation>Auto-generated diagram view</documentation>
+
+      <!-- Visual elements will be generated by ViewXmlGenerator -->
+
+      <!-- Connections will be generated by ViewXmlGenerator -->
+
+    </element>
+
+  </folder>
+
+</model>

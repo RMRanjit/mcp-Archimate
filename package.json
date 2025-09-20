@@ -1,18 +1,54 @@
 {
-  "name": "mcp-archimate",
+  "name": "@null-pointer/mcp-archimate",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A Model Context Protocol (MCP) server for ArchiMate 3.2 enterprise architecture diagrams. Creates Mermaid and ArchiMate XML diagrams with validation against ArchiMate 3.2 specification.",
+  "main": "dist/server.js",
+  "bin": {
+    "mcp-archimate": "dist/server.js"
+  },
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "node dist/server.js",
     "dev": "nodemon src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "archimate",
+    "enterprise-architecture",
+    "mcp",
+    "model-context-protocol",
+    "diagrams",
+    "mermaid",
+    "xml-export",
+    "architecture-modeling",
+    "business-architecture",
+    "application-architecture",
+    "technology-architecture"
+  ],
+  "author": "null-Pointer",
+  "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RMRanjit/mcp-Archimate.git"
+  },
+  "homepage": "https://github.com/RMRanjit/mcp-Archimate#readme",
+  "bugs": {
+    "url": "https://github.com/RMRanjit/mcp-Archimate/issues"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE",
+    "SETUP.md"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@types/node": "^24.5.2",
     "nodemon": "^3.1.10",
@@ -20,6 +56,7 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.18.1"
+    "@modelcontextprotocol/sdk": "^1.18.1",
+    "@xmldom/xmldom": "^0.8.10"
   }
 }

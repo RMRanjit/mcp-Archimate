@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs';
-import { join } from 'path';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { Relationship } from '../core/relationship.js';
 import { RelationshipType } from '../models/archimate.js';
 import { BaseElement } from '../core/element.js';
@@ -15,7 +16,11 @@ export class RelationshipXmlGenerator {
   private templatePath: string;
 
   constructor() {
-    this.templatePath = join(__dirname, 'templates');
+    // ES module compatible way to get current directory
+    const currentFileUrl = import.meta.url;
+    const currentFilePath = fileURLToPath(currentFileUrl);
+    const currentDir = dirname(currentFilePath);
+    this.templatePath = join(currentDir, 'templates');
   }
 
   /**

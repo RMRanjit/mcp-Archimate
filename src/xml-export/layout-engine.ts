@@ -12,6 +12,13 @@ export interface ElementDimensions {
   height: number;
 }
 
+export interface ElementPosition {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+
 export interface LayoutConfiguration {
   gridSpacing: number;
   layerVerticalSpacing: number;

@@ -1,4 +1,7 @@
-# MCP ArchiMate Server
+# @null-pointer/mcp-archimate
+
+[![npm version](https://badge.fury.io/js/%40null-pointer%2Fmcp-archimate.svg)](https://badge.fury.io/js/%40null-pointer%2Fmcp-archimate)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A Model Context Protocol (MCP) server that generates ArchiMate 3.2 enterprise architecture diagrams. This server enables AI assistants like Claude to create, validate, and visualize ArchiMate models through natural language interactions.
 
@@ -11,38 +14,43 @@ ArchiMate is an open standard for enterprise architecture modeling that provides
 - **Complete ArchiMate 3.2 Support**: All 55+ element types across 7 architectural layers
 - **Intelligent Validation**: Ensures diagram compliance with ArchiMate 3.2 specification
 - **Mermaid Diagram Generation**: Creates beautiful, shareable diagrams
+- **ArchiMate XML Export**: Generates ArchiMate 3.0 Open Exchange Format XML
 - **Case-Insensitive Operations**: Flexible element and relationship naming
 - **MCP Integration**: Seamless integration with Claude Desktop and other MCP clients
 
-## Installation
+## Quick Start
+
+### Installation
+
+Install the package globally to use as an MCP server:
+
+```bash
+npm install -g @null-pointer/mcp-archimate
+```
+
+Or install locally in your project:
+
+```bash
+npm install @null-pointer/mcp-archimate
+```
+
+### Running the MCP Server
+
+Start the server directly:
+
+```bash
+npx @null-pointer/mcp-archimate
+```
+
+Or if installed globally:
+
+```bash
+mcp-archimate
+```
 
 ### Prerequisites
 
 - Node.js (v16 or higher)
-- npm or yarn package manager
-
-### Setup
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd MCP-Archimate
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Build the project**
-   ```bash
-   npm run build
-   ```
-
-4. **Start the MCP server**
-   ```bash
-   npm run start
-   ```
 
 ### Claude Desktop Integration
 
@@ -55,8 +63,19 @@ ArchiMate is an open standard for enterprise architecture modeling that provides
    {
      "mcpServers": {
        "archimate": {
-         "command": "node",
-         "args": ["/path/to/MCP-Archimate/dist/server.js"]
+         "command": "npx",
+         "args": ["@null-pointer/mcp-archimate"]
+       }
+     }
+   }
+   ```
+
+   Or if installed globally:
+   ```json
+   {
+     "mcpServers": {
+       "archimate": {
+         "command": "mcp-archimate"
        }
      }
    }

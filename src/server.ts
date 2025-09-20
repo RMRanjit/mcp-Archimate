@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import {
@@ -15,6 +16,7 @@ import { RelationshipType } from './models/archimate.js';
 import { MermaidGenerator } from './generator/mermaid_generator.js';
 import { Validator } from './validator/validator.js';
 import { ResourceManager } from './resources/resource-manager.js';
+import { XmlExporter, createXmlExporter } from './xml-export/xml-exporter.js';
 import { ModelXmlGenerator } from './xml-export/model-xml-generator.js';
 
 interface ArchiMateElement {
@@ -826,17 +828,27 @@ Please analyze my requirements and suggest the most appropriate ArchiMate patter
         }
       });
 
-      // Generate XML using the ModelXmlGenerator
-      const xmlGenerator = new ModelXmlGenerator();
+      // Generate XML using the XmlExporter orchestrator
+      const xmlExporter = createXmlExporter();
       const exportOptions = {
         modelId: `model-${Date.now()}`,
         modelName,
         modelPurpose,
         includeViews,
-        viewName
+        viewOptions: viewName ? { viewName } : undefined,
+        validateModel: true,
+        strictValidation: false,
+        includeStatistics: false
       };
 
-      const xmlOutput = xmlGenerator.generate(internalElements, internalRelationships, exportOptions);
+      const exportResult = await xmlExporter.exportModel(internalElements, internalRelationships, exportOptions);
+
+      // Include warnings in debug output if any
+      if (exportResult.warnings && exportResult.warnings.length > 0) {
+        console.error('[DEBUG] Export warnings:', exportResult.warnings);
+      }
+
+      const xmlOutput = exportResult.xml;
 
       return {
         content: [
